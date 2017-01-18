@@ -2,7 +2,7 @@
 
 namespace AppBundle\Menu;
 
-//use Knp\Menu\MenuFactory;
+use Knp\Menu\MenuFactory;
 
 class Builder {
 	public function mainMenu(MenuFactory $factory, array $options) {
