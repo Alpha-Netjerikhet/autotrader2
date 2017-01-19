@@ -10,6 +10,11 @@ class DefaultController extends Controller {
 	 * @Route("/our-cars", name="offer")
 	 */
 	public function indexAction() {
-		return $this->render('CarBundle:Default:index.html.twig');
+		$cars = [
+			['Make' => 'BMW', 'Name' => 'X1'],
+			['Make' => 'Fiat', 'Name' => 'Croma'],
+			['Make' => 'Audi', 'Name' => 'Q7'],
+		];
+		return $this->render('CarBundle:Default:index.html.twig', ['cars' => $cars]);
 	}
 }

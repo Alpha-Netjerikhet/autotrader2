@@ -6,4 +6,15 @@
 
 {% block body %}
 	<h1><b>Our Offer</b></h1>
+	<table class="table">
+		<tr>
+			<th>Make</th><th>Name</th>
+		</tr>
+		{% for car in cars %}
+		<tr>
+			<td>{{ car.Make }}</td><td>{{ car.Name }}</td>
+		</tr>
+		{% endfor %}
+		</tr>
+	</table>
 {% endblock %}
