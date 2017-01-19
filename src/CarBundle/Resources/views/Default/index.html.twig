@@ -8,11 +8,11 @@
 	<h1><b>Our Offer</b></h1>
 	<table class="table">
 		<tr>
-			<th>Make</th><th>Name</th>
+			<th>Make</th><th>Name</th><th>Actions</th>
 		</tr>
 		{% for car in cars %}
 		<tr>
-			<td>{{ car.Make }}</td><td>{{ car.Name }}</td>
+			<td>{{ car.Make }}</td><td>{{ car.Name }}</td><td><a href="{{ url('show_car', {id: car.id}) }}">Show Details</a></td>
 		</tr>
 		{% endfor %}
 		</tr>

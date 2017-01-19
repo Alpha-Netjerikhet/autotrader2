@@ -19,4 +19,15 @@ class DefaultController extends Controller {
 		$cars = $carRepository->findAll();
 		return $this->render('CarBundle:Default:index.html.twig', ['cars' => $cars]);
 	}
+
+	/**
+	 * @param $id
+	 * @Route("/car/{id}", name="show_car")
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
+	public function showAction($id) {
+		$carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
+		$car = $carRepository->find($id);
+		return $this->render('CarBundle:Default:show.html.twig', ['car' => $car]);
+	}
 }
