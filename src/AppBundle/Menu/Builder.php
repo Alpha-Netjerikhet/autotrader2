@@ -9,6 +9,7 @@ class Builder {
 		$menu = $factory->createItem('root');
 		$menu->setChildrenAttribute('class', 'nav navbar-nav');
 		$menu->addChild('Home', ['route' => 'homepage']);
+		$menu->addChild('Offer', ['route' => 'offer']);
 		return $menu;
 	}
 }
