@@ -12,7 +12,7 @@
 		</tr>
 		{% for car in cars %}
 		<tr>
-			<td>{{ car.Make }}</td><td>{{ car.Name }}</td><td><a href="{{ url('show_car', {id: car.id}) }}">Show Details</a></td>
+			<td>{{ car.make.name }}</td><td>{{ car.model.name }}</td><td><a href="{{ url('show_car', {id: car.id}) }}">Show Details</a></td>
 		</tr>
 		{% endfor %}
 		</tr>

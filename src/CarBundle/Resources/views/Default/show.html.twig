@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ parent() }} {{ car.name }} {# parent() will display the title from base view "AutoTrader" #}
+	{{ parent() }} {{ car.model.name }} {# parent() will display the title from base view "AutoTrader" #}
 {% endblock %}
 
 {% block body %}
-	<h1><b>{{ car.make }} {{ car.name }}</b></h1>
+	<h1><b>{{ car.make.name }} {{ car.model.name }}</b></h1>
 	<b>Specs</b>
 	<table class="table">
 		<tr>
