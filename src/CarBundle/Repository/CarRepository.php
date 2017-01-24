@@ -10,4 +10,21 @@ namespace CarBundle\Repository;
  */
 class CarRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findCarsWithDetails(){
+		$qb=$this->createQueryBuilder('c'); // 'c' is an alias to Car entity
+		$qb->select('c, make, model');
+		$qb->join('c.make', 'make'); // 'make' is an alias to Make entity
+		$qb->join('c.model', 'model');  // 'model' is an alias to Model entity
+		return $qb->getQuery()->getResult();
+	}
+
+	public function findCarsWithDetailsById($id){
+		$qb=$this->createQueryBuilder('c');
+		$qb->select('c, make, model');
+		$qb->join('c.make', 'make');
+		$qb->join('c.model', 'model');
+		$qb->where('c.id = :id');
+		$qb->setParameter('id', $id);
+		return $qb->getQuery()->getSingleResult(); // to get 1 row
+	}
 }
