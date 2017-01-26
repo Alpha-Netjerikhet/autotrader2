@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+	<div class='pull-right'>
+		{{ form_start(form, { attr: { class: 'form-inline'}}) }}
+		{{ form_widget(form.search, { attr: { placeholder: 'Main search'}}) }}
+		<button type='submit' class='btn'>Search</button>
+		{{ form_errors(form.search) }}
+		{{ form_end(form) }}
+	</div>
     <h1><b>AutoTrader</b></h1>
 {% endblock %}
